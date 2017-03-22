@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!-- This file is part of Tryton.  The COPYRIGHT file at the top level of
+this repository contains the full copyright notices and license terms. -->
+<form string="Price List">
+    <label name="name"/>
+    <field name="name"/>
+    <label name="company"/>
+    <field name="company"/>
+    <label name="tax_included"/>
+    <field name="tax_included"/>
+    <newline/>
+    <label name="percentage"/>
+    <field name="percentage"/>
+    <label name="formula"/>
+    <field name="formula"/>
+    <newline/>
+    <label name="incluir_lista"/>
+    <field name="incluir_lista"/>
+    <label name="definir_precio_venta"/>
+    <field name="definir_precio_venta"/>
+</form>

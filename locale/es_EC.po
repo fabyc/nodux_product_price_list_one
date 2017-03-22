@@ -1,0 +1,154 @@
+#
+msgid ""
+msgstr "Content-Type: text/plain; charset=utf-8\n"
+
+msgctxt "field:product.list_by_product,create_date:"
+msgid "Create Date"
+msgstr "Fecha de Creación"
+
+msgctxt "field:product.list_by_product,create_uid:"
+msgid "Create User"
+msgstr "Usuario creación"
+
+msgctxt "field:product.list_by_product,fijo:"
+msgid "Precio sin IVA"
+msgstr ""
+
+msgctxt "field:product.list_by_product,fijo_con_iva:"
+msgid "Precio con IVA"
+msgstr ""
+
+msgctxt "field:product.list_by_product,id:"
+msgid "ID"
+msgstr "ID"
+
+msgctxt "field:product.list_by_product,lista_precio:"
+msgid "Lista de Precio"
+msgstr ""
+
+msgctxt "field:product.list_by_product,precio_venta:"
+msgid "Definir como precio de VENTA"
+msgstr ""
+
+msgctxt "field:product.list_by_product,product:"
+msgid "Product Template"
+msgstr "Plantilla de producto"
+
+#, fuzzy
+msgctxt "field:product.list_by_product,rec_name:"
+msgid "Name"
+msgstr "Nombre"
+
+msgctxt "field:product.list_by_product,template:"
+msgid "Product Template"
+msgstr "Plantilla de producto"
+
+msgctxt "field:product.list_by_product,write_date:"
+msgid "Write Date"
+msgstr "Fecha de Modificación"
+
+msgctxt "field:product.list_by_product,write_uid:"
+msgid "Write User"
+msgstr "Modificado por Usuario"
+
+msgctxt "field:product.price_list,company:"
+msgid "Company"
+msgstr "Empresa"
+
+msgctxt "field:product.price_list,create_date:"
+msgid "Create Date"
+msgstr "Fecha de creación"
+
+msgctxt "field:product.price_list,create_uid:"
+msgid "Create User"
+msgstr "Creado por usuario"
+
+msgctxt "field:product.price_list,definir_precio_venta:"
+msgid "Definir como precio de venta"
+msgstr ""
+
+msgctxt "field:product.price_list,formula:"
+msgid "Formula"
+msgstr ""
+
+msgctxt "field:product.price_list,id:"
+msgid "ID"
+msgstr "ID"
+
+msgctxt "field:product.price_list,incluir_lista:"
+msgid "Incluir lista de precio en producto"
+msgstr ""
+
+msgctxt "field:product.price_list,name:"
+msgid "Name"
+msgstr "Nombre"
+
+msgctxt "field:product.price_list,percentage:"
+msgid "Porcentaje de descuento"
+msgstr ""
+
+msgctxt "field:product.price_list,rec_name:"
+msgid "Name"
+msgstr "Nombre"
+
+msgctxt "field:product.price_list,tax_included:"
+msgid "Tax Included"
+msgstr "Impuesto incluido"
+
+msgctxt "field:product.price_list,write_date:"
+msgid "Write Date"
+msgstr "Fecha de modificación"
+
+msgctxt "field:product.price_list,write_uid:"
+msgid "Write User"
+msgstr "Modificado por usuario"
+
+msgctxt "field:product.template,listas_precios:"
+msgid "Listas de precio"
+msgstr ""
+
+msgctxt "help:product.price_list,definir_precio_venta:"
+msgid "Definir como precio de venta principal"
+msgstr ""
+
+msgctxt "help:product.price_list,formula:"
+msgid ""
+"Python expression that will be evaluated with:\n"
+"- unit_price: the original unit_price"
+msgstr ""
+
+msgctxt "model:ir.action,name:act_price_list_form"
+msgid "Price Lists"
+msgstr "Listas de precios"
+
+msgctxt "model:ir.ui.menu,name:menu_price_list"
+msgid "Price Lists"
+msgstr "Listas de Precios"
+
+msgctxt "model:product.list_by_product,name:"
+msgid "List By Product"
+msgstr "Lista de Precio por Producto"
+
+msgctxt "model:product.price_list,name:"
+msgid "Price List"
+msgstr "Lista de precios"
+
+msgctxt "view:product.list_by_product:"
+msgid "Listas de Precios"
+msgstr ""
+
+msgctxt "view:product.list_by_product:"
+msgid "con iva"
+msgstr ""
+
+msgctxt "view:product.list_by_product:"
+msgid "sin iva"
+msgstr ""
+
+msgctxt "view:product.price_list:"
+msgid "Price List"
+msgstr "Lista de precios"
+
+msgctxt "view:product.price_list:"
+msgid "Price Lists"
+msgstr "Listas de precios"
