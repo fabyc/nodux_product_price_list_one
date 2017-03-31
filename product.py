@@ -42,7 +42,7 @@ class Template:
         pool = Pool()
 
         Product = pool.get('product.product')
-        product, = Product.search([('template', '=', self.id)])
+
         PriceList = pool.get('product.price_list')
         ListByProduct = pool.get('product.list_by_product')
         User = pool.get('res.user')
@@ -68,13 +68,45 @@ class Template:
             pass
         else:
             if self.list_price:
-                lineas = []
-                for pricelist in priceslist:
-                    percentage = pricelist.percentage/100
-                    precio_final = self.list_price * (1 + percentage)
+                if priceslist:
+                    lineas = []
+                    for pricelist in priceslist:
+                        percentage = pricelist.percentage/100
+                        precio_final = self.list_price * (1 + percentage)
 
-                    if user.company.currency:
-                            precio_final = user.company.currency.round(precio_final)
+                        if user.company.currency:
+                                precio_final = user.company.currency.round(precio_final)
+                        if taxes1:
+                            if taxes1 == "iva0":
+                                rate = Decimal(0.0)
+                            elif taxes1 == "no_iva":
+                                rate = Decimal(0.0)
+                            elif taxes1 == "iva12":
+                                rate = Decimal(0.12)
+                            elif taxes1 == "iva14":
+                                rate = Decimal(0.14)
+                            else:
+                                rate = Decimal(0.0)
+
+                            iva = precio_final * rate
+
+                        precio_total = precio_final + iva
+                        precio_total = user.company.currency.round(precio_total)
+                        price_list_lines = ListByProduct()
+                        price_list_lines.lista_precio = pricelist.id
+                        price_list_lines.fijo = precio_final
+                        price_list_lines.fijo_con_iva = precio_total
+                        price_list_lines.precio_venta = pricelist.definir_precio_venta
+
+                        lineas.append(price_list_lines)
+
+                        if pricelist.definir_precio_venta == True:
+                            precio_para_venta = precio_final
+                            precio_total_iva = precio_total
+                    self.listas_precios = lineas
+                    self.list_price = precio_para_venta
+                    self.list_price_with_tax = user.company.currency.round(precio_total_iva)
+                else:
                     if taxes1:
                         if taxes1 == "iva0":
                             rate = Decimal(0.0)
@@ -86,26 +118,11 @@ class Template:
                             rate = Decimal(0.14)
                         else:
                             rate = Decimal(0.0)
-
-                        iva = precio_final * rate
-
-                    precio_total = precio_final + iva
-                    precio_total = user.company.currency.round(precio_total)
-                    price_list_lines = ListByProduct()
-                    price_list_lines.lista_precio = pricelist.id
-                    price_list_lines.fijo = precio_final
-                    price_list_lines.fijo_con_iva = precio_total
-                    price_list_lines.precio_venta = pricelist.definir_precio_venta
-
-                    lineas.append(price_list_lines)
-
-                    if pricelist.definir_precio_venta == True:
-                        precio_para_venta = precio_final
-                        precio_total_iva = precio_total
-
-                self.listas_precios = lineas
-                self.list_price = precio_para_venta
-                self.list_price_with_tax = user.company.currency.round(precio_total_iva)
+                        iva = self.list_price * rate
+                    lineas = []
+                    self.listas_precios = lineas
+                    self.list_price = self.list_price
+                    self.list_price_with_tax = user.company.currency.round(self.list_price + iva)
 
     @fields.depends('listas_precios', 'list_price', 'taxes_category', 'category',
         'list_price_with_tax', 'customer_taxes', 'cost_price')
